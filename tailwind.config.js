@@ -17,6 +17,7 @@ module.exports = {
         prefix: "ctp",
         defaultFlavor: "macchiato",
       }),
+      require("@tailwindcss/typography"),
     ],
   },
 };
