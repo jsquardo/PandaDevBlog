@@ -1,6 +1,6 @@
 import "./globals.css";
 import localFont from "next/font/local";
-import clsx from "clsx";
+import "@catppuccin/tailwindcss";
 
 const gilroy = localFont({
   src: [
@@ -47,7 +47,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={clsx(gilroy.variable, helv.variable)}>{children}</body>
+      <body className={`${gilroy.variable} ${helv.variable} theme-macchiato bg-ctp-base`}>
+        {children}
+      </body>
     </html>
   );
 }

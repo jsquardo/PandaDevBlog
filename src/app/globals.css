@@ -2,26 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  @font-face {
+    font-family: Gilroy;
+    font-weight: 400;
+    src: url(../../public/Fonts/Gilroy-Regular.woff2) format("woff2");
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 500;
+    src: url(../../public/Fonts/HelveticaNowText-Regular.woff2) format("woff2");
+  }
+  .theme-macchiato {
+    --color-ctp-rosewater: 244 219 214;
+    --color-ctp-flamingo: 240 198 198;
+    --color-ctp-pink: 245 189 230;
+    --color-ctp-mauve: 198 160 246;
+    --color-ctp-red: 237 135 150;
+    --color-ctp-maroon: 238 153 160;
+    --color-ctp-peach: 245 169 127;
+    --color-ctp-yellow: 238 212 159;
+    --color-ctp-green: 166 218 149;
+    --color-ctp-teal: 139 213 202;
+    --color-ctp-sky: 145 215 227;
+    --color-ctp-sapphire: 125 196 228;
+    --color-ctp-blue: 138 173 244;
+    --color-ctp-lavender: 183 189 248;
+    --color-ctp-text: 202 211 245;
+    --color-ctp-subtext1: 184 192 224;
+    --color-ctp-subtext0: 165 173 203;
+    --color-ctp-overlay2: 147 154 183;
+    --color-ctp-overlay1: 128 135 162;
+    --color-ctp-overlay0: 110 115 141;
+    --color-ctp-surface2: 91 96 120;
+    --color-ctp-surface1: 73 77 100;
+    --color-ctp-surface0: 54 58 79;
+    --color-ctp-base: 36 39 58;
+    --color-ctp-mantle: 30 32 48;
+    --color-ctp-crust: 24 25 38;
+  }
 }
