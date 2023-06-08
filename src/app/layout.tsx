@@ -1,6 +1,8 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import "@catppuccin/tailwindcss";
+import { Container } from "../components/Container";
+import { Header } from "../components/Header";
 
 const gilroy = localFont({
   src: [
@@ -47,8 +49,11 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${gilroy.variable} ${helv.variable} theme-macchiato bg-ctp-base`}>
-        {children}
+      <body className={`${gilroy.variable} ${helv.variable} theme-mocha bg-ctp-base`}>
+        <Container>
+          <Header />
+          {children}
+        </Container>
       </body>
     </html>
   );
