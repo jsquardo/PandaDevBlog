@@ -1,8 +1,9 @@
 import "./globals.css";
-import localFont from "next/font/local";
 import "@catppuccin/tailwindcss";
+import localFont from "next/font/local";
 import { Container } from "../components/Container";
-import { Header } from "../components/Header";
+import Header from "../components/Header";
+import { RootLayoutProviders } from "./providers";
 
 const gilroy = localFont({
   src: [
@@ -49,11 +50,15 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${gilroy.variable} ${helv.variable} theme-mocha bg-ctp-base`}>
-        <Container>
-          <Header />
-          {children}
-        </Container>
+      <body
+        className={`${gilroy.variable} ${helv.variable} ctp-latte bg-ctp-base text-ctp-text dark:ctp-mocha`}
+      >
+        <RootLayoutProviders>
+          <Container>
+            <Header />
+            {children}
+          </Container>
+        </RootLayoutProviders>
       </body>
     </html>
   );

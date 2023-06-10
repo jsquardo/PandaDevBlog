@@ -13,32 +13,4 @@
     font-weight: 500;
     src: url(../../public/Fonts/HelveticaNowText-Regular.woff2) format("woff2");
   }
-  .theme-mocha {
-    --color-ctp-rosewater: 245 224 220;
-    --color-ctp-flamingo: 242 205 205;
-    --color-ctp-pink: 245 194 231;
-    --color-ctp-mauve: 203 166 247;
-    --color-ctp-red: 243 139 168;
-    --color-ctp-maroon: 235 160 172;
-    --color-ctp-peach: 250 179 135;
-    --color-ctp-yellow: 249 226 175;
-    --color-ctp-green: 166 227 161;
-    --color-ctp-teal: 148 226 213;
-    --color-ctp-sky: 137 220 235;
-    --color-ctp-sapphire: 116 199 236;
-    --color-ctp-blue: 137 180 250;
-    --color-ctp-lavender: 180 190 254;
-    --color-ctp-text: 205 214 244;
-    --color-ctp-subtext1: 186 194 222;
-    --color-ctp-subtext0: 166 173 200;
-    --color-ctp-overlay2: 147 153 178;
-    --color-ctp-overlay1: 127 132 156;
-    --color-ctp-overlay0: 108 112 134;
-    --color-ctp-surface2: 88 91 112;
-    --color-ctp-surface1: 69 71 90;
-    --color-ctp-surface0: 49 50 68;
-    --color-ctp-base: 30 30 46;
-    --color-ctp-mantle: 24 24 37;
-    --color-ctp-crust: 17 17 27;
-  }
 }
