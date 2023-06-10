@@ -1,8 +1,7 @@
 import "./globals.css";
 import "@catppuccin/tailwindcss";
 import localFont from "next/font/local";
-import { Container } from "../components/Container";
-import Header from "../components/Header";
+import LayoutWrapper from "../components/LayoutWrapper";
 import { RootLayoutProviders } from "./providers";
 
 const gilroy = localFont({
@@ -54,10 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${gilroy.variable} ${helv.variable} ctp-latte bg-ctp-base text-ctp-text dark:ctp-mocha`}
       >
         <RootLayoutProviders>
-          <Container>
-            <Header />
-            {children}
-          </Container>
+          <LayoutWrapper>{children}</LayoutWrapper>
         </RootLayoutProviders>
       </body>
     </html>

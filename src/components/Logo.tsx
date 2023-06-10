@@ -11,7 +11,7 @@ const Logo = () => {
       href="/"
       className={clsx(
         "text-xl font-gil font-bold",
-        isIndex ? "text-ctp-txt" : "text-xl text-ctp-maroon"
+        isIndex ? "text-ctp-text" : "text-xl text-ctp-maroon"
       )}
     >
       pandadev.dev
