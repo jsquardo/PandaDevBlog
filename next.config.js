@@ -16,12 +16,4 @@ module.exports = withContentlayer({
   experimental: {
     appDir: true,
   },
-  headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-    ];
-  },
 });
