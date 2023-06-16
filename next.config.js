@@ -7,12 +7,6 @@ module.exports = withContentlayer({
   images: {
     domains: ["pbs.twimg.com"],
   },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      require("./scripts/rss");
-    }
-    return config;
-  },
   experimental: {
     appDir: true,
   },
