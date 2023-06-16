@@ -3,7 +3,7 @@ const { join } = require("path");
 const RSS = require("rss");
 const matter = require("gray-matter");
 
-const postDirectory = join(process.cwd(), "./content");
+const postDirectory = join(process.cwd(), "../content/posts");
 
 async function getPostSlugs() {
   return await fs.readdir(postDirectory);

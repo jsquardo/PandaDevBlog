@@ -1,17 +1,36 @@
-import { allPosts } from "@/.contentlayer/generated";
+import { allPosts } from "../.contentlayer/generated";
+import { BlogDate } from "@/components/BlogDate";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="prose dark:prose-invert">
-      {allPosts.map((post) => (
-        <article key={post._id}>
-          <Link href={post.slug}>
-            <h2 className="text-xl font-gil font-bold">{post.title}</h2>
-          </Link>
-          {post.description && <p>{post.description}</p>}
-        </article>
-      ))}
-    </div>
+    <>
+      <main>
+        {allPosts
+          .sort((a, b) => {
+            if (new Date(a.date) > new Date(b.date)) {
+              return -1;
+            }
+
+            return 1;
+          })
+          .map((post) => (
+            <article key={post._id}>
+              <h2 className="text-xxl mt-10 mb-2 font-bold font-serif">
+                <Link
+                  href={`/posts/${post.slug}`}
+                  className="text-pink-600 dark:text-pink-300"
+                >
+                  {post.title}
+                </Link>
+              </h2>
+              <BlogDate date={post.date} minutes={post.readTime} />
+              <p className="mb-7 mt-2 text-base text-gray-700 dark:text-gray-400">
+                {post.excerpt}
+              </p>
+            </article>
+          ))}
+      </main>
+    </>
   );
 }
