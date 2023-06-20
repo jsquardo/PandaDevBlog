@@ -4,6 +4,7 @@ import { getTweets } from "lib/twitter";
 import { allPosts } from "../../../.contentlayer/generated";
 import { notFound } from "next/navigation";
 import { Mdx } from "../../../components/mdx-components";
+import { Pagination } from "../../../components/Pagination";
 
 export default async function Post({ params }) {
   const post = allPosts.find((post) => post.slug === params.slug);
@@ -56,7 +57,6 @@ export default async function Post({ params }) {
           </p>
         </footer>
       </main>
-      <Aside />
       <Pagination page={post.slug} />
     </>
   );

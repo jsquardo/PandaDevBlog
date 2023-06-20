@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Post } from "../.contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Link from "next/link";
+import { Tweet } from "../components/Tweet";
 
 function CustomLink(props) {
   const { href, children } = props;
