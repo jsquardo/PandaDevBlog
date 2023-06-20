@@ -5,18 +5,6 @@ import remarkCodeTitles from "remark-code-titles";
 import mdxPrism from "mdx-prism";
 import readingTime from "reading-time";
 
-/** @type {import('contentlayer/source-files').ComputedFields} */
-const computedFields = {
-  slug: {
-    type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
-  },
-  slugAsParams: {
-    type: "string",
-    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
-  },
-};
-
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: `**/*.mdx`,
