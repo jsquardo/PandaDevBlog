@@ -19,7 +19,7 @@ export default function Home() {
               <h2 className="text-xxl mt-10 mb-2 font-bold font-serif">
                 <Link
                   href={`/posts/${post.slug}`}
-                  className="text-pink-600 dark:text-pink-300"
+                  className="text-ctp-green dark:text-ctp-green"
                 >
                   {post.title}
                 </Link>

@@ -26,13 +26,13 @@ export default async function Post({ params }) {
   return (
     <>
       <main className="dark:text-white">
-        <h1 className="mb-7 mt-10 sm:text-4xl text-3xl font-bold font-gil dark:text-white">
+        <h1 className="mb-7 mt-10 sm:text-4xl text-3xl text-black font-bold font-gil dark:text-white">
           {post.title}
         </h1>
         <p className="leading-7 mb-7 -mt-6 dark:text-white">
           <BlogDate date={post.date} minutes={post.readTime} />
         </p>
-        <article className="prose dark:prose-dark w-full dark:text-white font-helv">
+        <article className="prose dark:prose-invert w-full dark:text-white font-helv">
           <Mdx post={post} tweets={tweets} />
         </article>
         <footer className="mb-8 mt-6">
