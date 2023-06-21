@@ -1,10 +1,12 @@
 import { allPosts } from "../.contentlayer/generated";
 import { BlogDate } from "@/components/BlogDate";
 import Link from "next/link";
+import Hero from "../components/Hero";
 
 export default function Home() {
   return (
     <>
+      <Hero />
       <main>
         {allPosts
           .sort((a, b) => {

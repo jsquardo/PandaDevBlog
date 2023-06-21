@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {},
+
     fontFamily: {
       gil: ["var(--font-gilroy)"],
       helv: ["var(--font-helv)"],
