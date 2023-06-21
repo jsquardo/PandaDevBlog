@@ -1,16 +1,38 @@
+"use client";
+
 import Image from "next/image";
+import { Post } from "../.contentlayer/generated";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import Link from "next/link";
+import { Tweet } from "../components/Tweet";
 
-const components = {
-  Image,
-};
+function CustomLink(props) {
+  const { href, children } = props;
+  const isInternalLink = href && (href.startsWith("#") || href.startsWith("/"));
 
-interface MdxProps {
-  code: string;
+  if (isInternalLink) {
+    return (
+      <Link href={href} {...props}>
+        {children}
+      </Link>
+    );
+  }
+
+  return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-export function Mdx({ code }: MdxProps) {
-  const Component = useMDXComponent(code);
+export function Mdx({ post, tweets }: { post: Post; tweets: Array<any> }) {
+  const Component = useMDXComponent(post.body.code);
 
-  return <Component components={components} />;
+  const StaticTweet = ({ id }) => {
+    const tweet = tweets.find((tweet) => tweet.id === id);
+    return <Tweet {...tweet} />;
+  };
+
+  const MDXComponents = {
+    Image,
+    a: CustomLink,
+  };
+
+  return <Component components={{ ...MDXComponents, StaticTweet }} />;
 }
