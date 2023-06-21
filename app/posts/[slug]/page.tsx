@@ -1,4 +1,4 @@
-import { BlogDate } from "@/components/BlogDate";
+import { BlogDate } from "../../../components/BlogDate";
 
 import { getTweets } from "lib/twitter";
 import { allPosts } from "../../../.contentlayer/generated";
@@ -25,20 +25,20 @@ export default async function Post({ params }) {
 
   return (
     <>
-      <main>
-        <h1 className="mb-7 mt-10 sm:text-4xl text-3xl font-bold font-serif">
+      <main className="dark:text-white">
+        <h1 className="mb-7 mt-10 sm:text-4xl text-3xl font-bold font-gil dark:text-white">
           {post.title}
         </h1>
-        <p className="leading-7 mb-7 -mt-6">
+        <p className="leading-7 mb-7 -mt-6 dark:text-white">
           <BlogDate date={post.date} minutes={post.readTime} />
         </p>
-        <article className="prose dark:prose-dark w-full">
+        <article className="prose dark:prose-dark w-full dark:text-white font-helv">
           <Mdx post={post} tweets={tweets} />
         </article>
         <footer className="mb-8 mt-6">
           <p className="text-base">
             <a
-              className="text-pink-700 dark:text-pink-300 shadow-link hover:shadow-none"
+              className="text-ctp-green dark:text-ctp-green shadow-link hover:shadow-none"
               href={TWITTER_URL}
               target="_blank"
               rel="noopener noreferrer"
