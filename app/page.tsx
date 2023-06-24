@@ -18,16 +18,16 @@ export default function Home() {
           })
           .map((post) => (
             <article key={post._id}>
-              <h2 className="text-xxl mt-10 mb-2 font-bold font-serif">
+              <h2 className="text-2xl mt-10 mb-2 font-bold font-serif">
                 <Link
                   href={`/posts/${post.slug}`}
-                  className="text-ctp-green dark:text-ctp-green"
+                  className="text-ctp-sky dark:text-ctp-sky"
                 >
                   {post.title}
                 </Link>
               </h2>
               <BlogDate date={post.date} minutes={post.readTime} />
-              <p className="mb-7 mt-2 text-base text-gray-700 dark:text-gray-400">
+              <p className="mb-7 mt-2 text-base text-black dark:text-gray-400">
                 {post.excerpt}
               </p>
             </article>

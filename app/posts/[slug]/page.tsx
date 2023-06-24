@@ -35,27 +35,7 @@ export default async function Post({ params }) {
         <article className="prose dark:prose-invert w-full dark:text-white font-helv">
           <Mdx post={post} tweets={tweets} />
         </article>
-        <footer className="mb-8 mt-6">
-          <p className="text-base">
-            <a
-              className="text-ctp-green dark:text-ctp-green shadow-link hover:shadow-none"
-              href={TWITTER_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Discuss on Twitter
-            </a>{" "}
-            &bull;{" "}
-            <a
-              className="text-pink-700 dark:text-pink-300 shadow-link hover:shadow-none"
-              href={GITHUB_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Edit on Github
-            </a>
-          </p>
-        </footer>
+        <footer className="mb-8 mt-6"></footer>
       </main>
       <Pagination page={post.slug} />
     </>

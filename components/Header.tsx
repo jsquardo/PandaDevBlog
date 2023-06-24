@@ -1,5 +1,6 @@
 "use client";
 
+import headerNavLinks from "../content/headerNavLinks";
 import Link from "./CustomLink";
 import { useEffect, useState } from "react";
 import MenuButton from "./MenuButton";
@@ -45,16 +46,28 @@ export default function Header() {
   return (
     <>
       <header
-        className={`w-full sticky z-20 top-0 flex items-center justify-between py-4  ${
+        className={`w-full sticky z-20 top-0 flex items-center justify-between py-4 mb-14  ${
           isTop
             ? "border-none"
-            : "border-b border-ctp-overlay0 dark:border-ctp-mauve"
+            : "border-b border-ctp-surface0 dark:border-ctp-mauve"
         } bg-ctp-base dark:bg-ctp-base backdrop-filter backdrop-saturate-150 backdrop-blur-lg`}
       >
         <nav className="flex items-center justify-between w-full max-w-2xl px-4 mx-auto sm:px-6 sm:py-2 xl:max-w-3xl xl:px-0">
           <div className="flex items-center text-ctp-black leading-5 dark:text-ctp-white">
             <div className="hidden sm:block sm:space-x-8">
               <Logo />
+              {headerNavLinks
+                .filter((l) => !l.onlyMobile)
+                .map((link) => (
+                  <Link
+                    key={link.title}
+                    title={link.title}
+                    href={link.href}
+                    className="font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
             </div>
             <div className="flex items-center sm:hidden">
               <MenuButton onClick={onMenuToggle} isOpened={menuShow} />
@@ -73,6 +86,18 @@ export default function Header() {
           <div className="px-12">
             <Logo />
           </div>
+          {headerNavLinks.map((link) => (
+            <div key={link.title} className="px-12">
+              <Link
+                href={link.href}
+                title={link.title}
+                className="text-xl font-semibold leading-8 tracking-wide text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
+                onClick={onMenuToggle}
+              >
+                {link.title}
+              </Link>
+            </div>
+          ))}
         </nav>
       </div>
     </>
