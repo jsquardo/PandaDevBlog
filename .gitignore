@@ -26,7 +26,9 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
+MAILCHIMP_AUDIENCE_ID=078676e09a
 # vercel
 .vercel
 
