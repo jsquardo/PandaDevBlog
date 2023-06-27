@@ -5,6 +5,7 @@ import { allPosts } from "../../../.contentlayer/generated";
 import { notFound } from "next/navigation";
 import { Mdx } from "../../../components/mdx-components";
 import { Pagination } from "../../../components/Pagination";
+import { Signup } from "../../../components/Signup";
 
 export default async function Post({ params }) {
   const post = allPosts.find((post) => post.slug === params.slug);
@@ -35,6 +36,7 @@ export default async function Post({ params }) {
         <article className="prose dark:prose-invert w-full dark:text-white font-helv">
           <Mdx post={post} tweets={tweets} />
         </article>
+        <Signup />
         <footer className="mb-8 mt-6"></footer>
       </main>
       <Pagination page={post.slug} />
